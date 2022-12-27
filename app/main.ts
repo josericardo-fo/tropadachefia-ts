@@ -1,4 +1,5 @@
 class Player { 
+  id: string;
   name: string;
 }
 class Weapon {
@@ -8,17 +9,35 @@ class Weapon {
 class Team {
   name: string;
 }
-const frdd: Player = {
+
+// Players
+const fred: Player = {
+  id: "frdduart",
   name: "Frederico",
 }
 const mecenas: Player = {
+  id: "k1nG Mec",
   name: "Caio José",
 }
-const rochann: Player = {
+const rocha: Player = {
+  id: "Rochann",
   name: "Caio Rocha",
 }
+const dedo: Player = {
+  id: "Nyarlathotep",
+  name: "Fernando",
+}
+const castro: Player = {
+  id: "DragonGugas ツ",
+  name: "Gustavo",
+}
+
+// Weapons
 const phantom: Weapon = {
   name: "Phantom",
-  price: 2900
+  price: 2900,
 }
-console.log(phantom)
+const vandal: Weapon = {
+  name: "Vandal",
+  price: 2900,
+}
