@@ -1,4 +1,11 @@
-class Player {
+class Player { 
+  name: string;
+}
+class Weapon {
+  name: string;
+  price: number;
+}
+class Team {
   name: string;
 }
 const frdd: Player = {
@@ -10,4 +17,8 @@ const mecenas: Player = {
 const rochann: Player = {
   name: "Caio Rocha",
 }
-console.log(frdd,mecenas,rochann)
+const phantom: Weapon = {
+  name: "Phantom",
+  price: 2900
+}
+console.log(phantom)
