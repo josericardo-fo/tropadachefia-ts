@@ -15,6 +15,9 @@ class Team {
   // * API de gestão de Time
   name: string;
 }
+class Match {
+  id: string;
+}
 
 // ! Players
 const fred: Player = {
@@ -139,6 +142,14 @@ const odin: Weapon = {
   id: 'Odin',
   price: 3200,
   powerModifier: 1,
+};
+
+// ! Team
+const ataque: Team = {
+  name: 'Atacantes',
+};
+const defesa: Team = {
+  name: 'Defensores',
 };
 
 // ! Duelo
