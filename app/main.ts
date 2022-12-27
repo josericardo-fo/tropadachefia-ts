@@ -102,3 +102,13 @@ const operator: Weapon = {
   id: "Operator",
   price: 4700,
 }
+
+// * Machine Guns
+const ares: Weapon = {
+  id: "Ares",
+  price: 1600,
+}
+const odin: Weapon = {
+  id: "Odin",
+  price: 3200,
+}
