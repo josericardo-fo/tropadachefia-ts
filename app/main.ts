@@ -147,7 +147,17 @@ const scorePlayer1 =
 const scorePlayer2 =
   fred.skillModifier * marshall.powerModifier * Math.random() * 100;
 if (scorePlayer1 > scorePlayer2) {
-  console.log('Rocha venceu o duelo');
+  console.log(
+    'Rocha venceu o duelo! Relatório de combate:',
+    scorePlayer1,
+    'VS',
+    scorePlayer2
+  );
 } else {
-  console.log('Fred venceu');
+  console.log(
+    'Fred venceu o duelo! Relatório de combate:',
+    scorePlayer2,
+    'VS',
+    scorePlayer1
+  );
 }
