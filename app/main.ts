@@ -45,7 +45,12 @@ const castro: Player = {
   name: 'Gustavo',
   skillModifier: 1,
 };
-let players = [fred, mecenas, rocha, dedo, castro];
+const icarus: Player = {
+  id: 'Icarus',
+  name: 'William',
+  skillModifier: 1,
+};
+let players: Player[] = [fred, mecenas, rocha, dedo, castro];
 
 // ! Weapons
 // * Sidearms
