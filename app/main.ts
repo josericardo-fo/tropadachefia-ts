@@ -53,7 +53,7 @@ const rengar: Player = {
   name: 'Lucas',
   skillModifier: 1,
 };
-let players: Player[] = [fred, mecenas, rocha, dedo, castro];
+let players: Player[] = [fred, mecenas, rocha, dedo, castro, rengar];
 
 // ! Weapons
 // * Sidearms
@@ -173,7 +173,7 @@ let weapons: Weapon[] = [
 ];
 
 // ! Duel
-// Escolhe dois players aleatórios para duelarem
+// Calcula a probabilidade de um jogador ganhar do outro levando em conta seu armamento e habilidades
 function duel(playerRound1: PlayerRound, playerRound2: PlayerRound) {
   const scorePlayer1 =
     playerRound1.player.skillModifier *
@@ -208,6 +208,7 @@ function duel(playerRound1: PlayerRound, playerRound2: PlayerRound) {
   }
 }
 
+// Escolhe dois players aleatórios com armamentos aleatórios
 function getRandomPlayers() {
   const shuffledPlayers = players.sort(() => 0.5 - Math.random());
   let [player1, player2] = shuffledPlayers.slice(0, 2);
