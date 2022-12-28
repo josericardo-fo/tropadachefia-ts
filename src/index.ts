@@ -178,13 +178,11 @@ function duel(playerRound1: PlayerRound, playerRound2: PlayerRound) {
   const scorePlayer1 =
     playerRound1.player.skillModifier *
     playerRound1.weapon.powerModifier *
-    Math.random() *
-    100;
+    Math.random();
   const scorePlayer2 =
     playerRound2.player.skillModifier *
     playerRound2.weapon.powerModifier *
-    Math.random() *
-    100;
+    Math.random();
   if (scorePlayer1 > scorePlayer2) {
     console.log(
       playerRound1.player.id,
