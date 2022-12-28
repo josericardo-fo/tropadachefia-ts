@@ -11,12 +11,10 @@ class Weapon {
   price: number;
   powerModifier: number;
 }
-class Team {
-  // * API de gestão de Time
-  name: string;
-}
-class Match {
-  id: string;
+class PlayerRound {
+  // * API de gestão de partida
+  player: Player;
+  weapon: Weapon;
 }
 
 // ! Players
@@ -48,6 +46,11 @@ const castro: Player = {
 const icarus: Player = {
   id: 'Icarus',
   name: 'William',
+  skillModifier: 1,
+};
+const rengar: Player = {
+  id: 'Vulgo Nobdy',
+  name: 'Lucas',
   skillModifier: 1,
 };
 let players: Player[] = [fred, mecenas, rocha, dedo, castro];
@@ -149,42 +152,85 @@ const odin: Weapon = {
   price: 3200,
   powerModifier: 1,
 };
-
-// ! Team
-const ataque: Team = {
-  name: 'Atacantes',
-};
-const defesa: Team = {
-  name: 'Defensores',
-};
+let weapons: Weapon[] = [
+  ares,
+  bucky,
+  bulldog,
+  classic,
+  frenzy,
+  ghost,
+  guardian,
+  judge,
+  marshall,
+  odin,
+  operator,
+  phantom,
+  sheriff,
+  shorty,
+  spectre,
+  stinger,
+  vandal,
+];
 
 // ! Duel
 // Escolhe dois players aleatórios para duelarem
-function duel(player1: Player, player2: Player) {
+function duel(playerRound1: PlayerRound, playerRound2: PlayerRound) {
   const scorePlayer1 =
-    player1.skillModifier * odin.powerModifier * Math.random() * 100;
+    playerRound1.player.skillModifier *
+    playerRound1.weapon.powerModifier *
+    Math.random() *
+    100;
   const scorePlayer2 =
-    player2.skillModifier * ghost.powerModifier * Math.random() * 100;
+    playerRound2.player.skillModifier *
+    playerRound2.weapon.powerModifier *
+    Math.random() *
+    100;
   if (scorePlayer1 > scorePlayer2) {
     console.log(
-      player1.id,
-      'venceu o duelo! Relatório de combate:',
-      scorePlayer1,
-      'VS',
-      scorePlayer2
+      playerRound1.player.id,
+      'com',
+      playerRound1.weapon.id,
+      'venceu o duelo contra',
+      playerRound2.player.id,
+      'com',
+      playerRound2.weapon.id
     );
   } else {
     console.log(
-      player2.id,
-      'venceu o duelo! Relatório de combate:',
-      scorePlayer2,
-      'VS',
-      scorePlayer1
+      playerRound2.player.id,
+      'com',
+      playerRound2.weapon.id,
+      'venceu o duelo contra',
+      playerRound1.player.id,
+      'com',
+      playerRound1.weapon.id
     );
   }
 }
 
-const shuffled = players.sort(() => 0.5 - Math.random());
-let [selectedPlayer1, selectedPlayer2] = shuffled.slice(0, 2);
+function getRandomPlayers() {
+  const shuffledPlayers = players.sort(() => 0.5 - Math.random());
+  let [player1, player2] = shuffledPlayers.slice(0, 2);
+  const shuffledWeapons = weapons.sort(() => 0.5 - Math.random());
+  let [weapon1, weapon2] = shuffledWeapons.slice(0, 2);
+  const playerRound1: PlayerRound = {
+    player: player1,
+    weapon: weapon1,
+  };
+  const playerRound2: PlayerRound = {
+    player: player2,
+    weapon: weapon2,
+  };
+  return [playerRound1, playerRound2];
+}
 
-duel(selectedPlayer1, selectedPlayer2);
+let randomPlayers = getRandomPlayers();
+duel(randomPlayers[0], randomPlayers[1]);
+randomPlayers = getRandomPlayers();
+duel(randomPlayers[0], randomPlayers[1]);
+randomPlayers = getRandomPlayers();
+duel(randomPlayers[0], randomPlayers[1]);
+randomPlayers = getRandomPlayers();
+duel(randomPlayers[0], randomPlayers[1]);
+randomPlayers = getRandomPlayers();
+duel(randomPlayers[0], randomPlayers[1]);
