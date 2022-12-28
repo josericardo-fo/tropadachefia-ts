@@ -45,6 +45,7 @@ const castro: Player = {
   name: 'Gustavo',
   skillModifier: 1,
 };
+let players = [fred, mecenas, rocha, dedo, castro];
 
 // ! Weapons
 // * Sidearms
@@ -152,23 +153,33 @@ const defesa: Team = {
   name: 'Defensores',
 };
 
-// ! Duelo
-const scorePlayer1 =
-  rocha.skillModifier * odin.powerModifier * Math.random() * 100;
-const scorePlayer2 =
-  fred.skillModifier * marshall.powerModifier * Math.random() * 100;
-if (scorePlayer1 > scorePlayer2) {
-  console.log(
-    'Rocha venceu o duelo! Relatório de combate:',
-    scorePlayer1,
-    'VS',
-    scorePlayer2
-  );
-} else {
-  console.log(
-    'Fred venceu o duelo! Relatório de combate:',
-    scorePlayer2,
-    'VS',
-    scorePlayer1
-  );
+// ! Duel
+// Escolhe dois players aleatórios para duelarem
+function duel(player1: Player, player2: Player) {
+  const scorePlayer1 =
+    player1.skillModifier * odin.powerModifier * Math.random() * 100;
+  const scorePlayer2 =
+    player2.skillModifier * ghost.powerModifier * Math.random() * 100;
+  if (scorePlayer1 > scorePlayer2) {
+    console.log(
+      player1.id,
+      'venceu o duelo! Relatório de combate:',
+      scorePlayer1,
+      'VS',
+      scorePlayer2
+    );
+  } else {
+    console.log(
+      player2.id,
+      'venceu o duelo! Relatório de combate:',
+      scorePlayer2,
+      'VS',
+      scorePlayer1
+    );
+  }
 }
+
+const shuffled = players.sort(() => 0.5 - Math.random());
+let [selectedPlayer1, selectedPlayer2] = shuffled.slice(0, 2);
+
+duel(selectedPlayer1, selectedPlayer2);
