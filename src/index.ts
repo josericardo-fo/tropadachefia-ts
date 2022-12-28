@@ -53,7 +53,38 @@ const rengar: Player = {
   name: 'Lucas',
   skillModifier: 1,
 };
-let players: Player[] = [fred, mecenas, rocha, dedo, castro, rengar];
+const ze: Player = {
+  id: 'Joseph',
+  name: 'José',
+  skillModifier: 1,
+};
+const vinihal: Player = {
+  id: 'OitentaConto',
+  name: 'Vinícius',
+  skillModifier: 1,
+};
+const gw: Player = {
+  id: 'GW das paty',
+  name: 'Guilherme',
+  skillModifier: 1,
+};
+const jesse: Player = {
+  id: 'jesseThekid',
+  name: 'Jesse',
+  skillModifier: 1,
+};
+let players: Player[] = [
+  fred,
+  mecenas,
+  rocha,
+  dedo,
+  castro,
+  rengar,
+  ze,
+  vinihal,
+  gw,
+  jesse,
+];
 
 // ! Weapons
 // * Sidearms
